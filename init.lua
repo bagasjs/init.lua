@@ -51,9 +51,9 @@ vim.o.hlsearch = false
 -- ######################################################################
 
 -- Enter visual mode faster
-vim.keymap.set({'n', 'i'}, '<C-s>',  '<ESC>v', { silent = true })
-vim.keymap.set({'n', 'i'}, '<C-s>l', '<ESC>V', { silent = true })
-vim.keymap.set({'n', 'i'}, '<C-s>a',  '<ESC><C-v>', { silent = true })
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>',  '<ESC>v', { silent = true })
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>l', '<ESC>V', { silent = true })
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>a',  '<ESC><C-v>', { silent = true })
 
 -- Quit neovim in normal mode, go to normal mode if in insert mode
 vim.keymap.set('n', '<C-q>', ':q<CR>', { silent = true })
