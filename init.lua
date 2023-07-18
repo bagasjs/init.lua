@@ -51,13 +51,11 @@ vim.o.hlsearch = false
 -- ######################################################################
 
 -- Enter visual mode faster
-vim.keymap.set({'n', 'i', 'v'}, '<C-Space>',  '<ESC>v', { silent = true })
-vim.keymap.set({'n', 'i', 'v'}, '<C-Space>l', '<ESC>V', { silent = true })
-vim.keymap.set({'n', 'i', 'v'}, '<C-Space>a',  '<ESC><C-v>', { silent = true })
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>',  '<ESC>v', { silent = true })
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>l', '<ESC>V', { silent = true })
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>a',  '<ESC><C-v>', { silent = true })
 
--- Quit neovim in normal mode, go to normal mode if in insert mode
-vim.keymap.set('n', '<C-q>', ':q<CR>', { silent = true })
-vim.keymap.set({'i', 'v'}, '<C-q>', '<ESC>', { silent = true })
+vim.keymap.set({'i', 'v'}, '<C-c>', '<ESC>', { silent = true })
 
 vim.keymap.set({'n', 'i', 'v'}, '<C-s>', '<ESC>:w<CR>', { silent = true })
 
@@ -84,9 +82,9 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = (function()
             local telescope_builtin = require("telescope.builtin")
-            vim.keymap.set('n', '<leader>sf', telescope_builtin.find_files, {})
+            vim.keymap.set('n', '<leader>pf', telescope_builtin.find_files, {})
             vim.keymap.set('n', '<leader>gf', telescope_builtin.git_files, {})
-            vim.keymap.set('n', '<leader>sw', telescope_builtin.grep_string, {})
+            vim.keymap.set('n', '<leader>ps', telescope_builtin.grep_string, {})
         end)
     },
     {
@@ -152,10 +150,10 @@ require("lazy").setup({
             local cmp = require('cmp')
             local cmp_select = {behavior = cmp.SelectBehavior.Select}
             local cmp_mappings = lsp.defaults.cmp_mappings({
-                ['<M-p>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<M-n>'] = cmp.mapping.select_next_item(cmp_select),
+                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<CR>'] = cmp.mapping.confirm({ select = false }),
-                ['<C-c>'] = cmp.mapping.complete(),
+                ['<C-Space>'] = cmp.mapping.complete(),
             })
             cmp_mappings["<Tab>"] = nil
             cmp_mappings['<S-Tab>'] = nil
