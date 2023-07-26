@@ -18,4 +18,5 @@
 - Javascript/Typescript
 - Svelte
 
-## Useful keybindings 
+## Some Key Remaps
+SOON
