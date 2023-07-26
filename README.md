@@ -4,7 +4,6 @@
 - nvim-telescope/telescope.nvim
 - nvim-treesitter
 - VonHeikemen/lsp-zero.nvim
-- navarasu/onedark.nvim
 - nvim-neo-tree/neo-tree.nvim
 
 ## Useful settings
@@ -12,19 +11,25 @@
 - localmapleader : <Space>
 - clipboard : unnamed // the OS clipboard and neovim clipboard are sync
 
-## Useful keybindings
-PATTERN: Keys [Modes] -> Description
-- <C-Space> [n, i, v] -> Quickly change from any mode to visual mode
-- <C-Space>l [n, i, v] -> Quickly change from any mode to visual line mode
-- <C-Space>a [n, i, v] -> Quickly change from any mode to visual mode. This remaps <C-v> in normal mode
-- <C-q> [n, i, v] -> Close neovim in normal mode, and go to normal mode in insert and visual mode
-- <leader>nl [n] -> Create a new line below
-- <leader>pv [n] -> Open neovim file explorer
-- <leader>rf [n] -> Get the reference of a keyword
-- <leader>sf [n] -> Search file using telescope
-- <leader>gf [n] -> Search git file using telescope
-- <leader>sw [n]-> Search word using telescope
-- <CR> [i]-> Select an option give by LSP
-- <C-c> [i] -> Trigger LSP completion
-- <C-w> [n]-> Start a new vertical window
-- <C-w>q [n] -> Quit a window
+## Useful keybindings 
+- (n, t) (<C-h>)     : Go to Left Window
+- (n, t) (<C-j>)     : Go to Below Window
+- (n, t) (<C-k>)     : Go to Above Window
+- (n, t) (<C-l>)     : Go to Right Window
+- (n)    (<C-Up>)    : Increase window height
+- (n)    (<C-Right>) : Increase window width
+- (n)    (<C-Down>)  : Decrease window height
+- (n)    (<C-Left>)  : Decrease window width
+- (n)    (<leader>ww): Other window
+- (n)    (<leader>wd): Delete current window
+- (n)    (<leader>wj): Split window below
+- (n)    (<leader>wl): Split window right
+
+- (n) (<leader><tab>l)      : Go to last tab
+- (n) (<leader><tab>f)      : Go to first tab
+- (n) (<leader><tab><tab>)  : New tab
+- (n) (<leader><tab>d)      : Delete current tab
+- (n) (<leader><tab>])      : Go to right tab
+- (n) (<leader><tab>[)      : Go to left tab
+
+- (n)    (<leader>wl):
