@@ -21,7 +21,6 @@ return {
             local lsp = require("lsp-zero")
             lsp.preset("recommended")
             lsp.ensure_installed({
-                'tsserver',
                 'rust_analyzer',
                 "lua_ls",
                 "intelephense",
@@ -29,6 +28,13 @@ return {
                 "pyright",
                 "svelte",
                 "zls",
+                -- Go
+                "gopls",
+                "golangci_lint_ls",
+                -- Javascript/Typescript
+                'tsserver',
+                'eslint',
+
             })
             -- Fix Undefined global 'vim'
             local cmp = require('cmp')
