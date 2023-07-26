@@ -1,4 +1,5 @@
 vim.keymap.set({'i', 'v'}, '<C-c>', '<ESC><ESC>', { silent = true })
+vim.keymap.set({"n", "i", "v"} , "<C-q>", "<cmd>qa<CR>")
 
 vim.keymap.set({'n', 'i', 'v'}, '<C-s>', '<CMD>w<CR><ESC>', { silent = true, desc = "Save file" })
 
