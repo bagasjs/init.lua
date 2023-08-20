@@ -4,14 +4,13 @@ return {
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
         keys = {
-            { "<leader>fe", "<CMD>Telescope file_browser<CR>", desc = "File browser" },
             { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Find files" },
             { "<leader>fs", "<CMD>Telescope live_grep<CR>", desc = "Live grep" },
             { "<leader><space>", "<cmd>Telescope find_files<CR>", desc = "Find files" },
             { "<leader>fm", "<CMD>Telescope man_pages<CR>", desc = "Manual Pages" },
         },
         opts = function ()
-            local fb_actions = require("telescope").extensions.file_browser.actions
+--            local fb_actions = require("telescope").extensions.file_browser.actions
             return {
                 defaults = {
                     vimgrep_arguments = {
@@ -64,31 +63,31 @@ return {
                 },
                 pickers = {
                 },
-                extensions = {
-                    file_browser = {
-                        hijack_netrw = true,
-                        initial_mode = "normal",
-                        mappings = {
-                            ["n"] = {
-                                ["n"] = fb_actions.create,
-                                ["d"] = fb_actions.remove,
-                                ["r"] = fb_actions.rename,
-                                ["m"] = fb_actions.move,
-                            },
-                        }
-                    }
-                },
+--                extensions = {
+--                    file_browser = {
+--                        hijack_netrw = true,
+--                        initial_mode = "normal",
+--                        mappings = {
+--                            ["n"] = {
+--                                ["n"] = fb_actions.create,
+--                                ["d"] = fb_actions.remove,
+--                                ["r"] = fb_actions.rename,
+--                                ["m"] = fb_actions.move,
+--                            },
+--                        }
+--                    }
+--                },
             }
         end,
         config = function (_, opts)
             local telescope = require("telescope");
             telescope.setup(opts)
-            telescope.load_extension("file_browser");
+            -- telescope.load_extension("file_browser");
         end,
     },
 
-    {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    },
+--     {
+--         "nvim-telescope/telescope-file-browser.nvim",
+--         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+--     },
 }

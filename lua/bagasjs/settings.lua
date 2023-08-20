@@ -1,11 +1,8 @@
---- This file is automatically loaded by plugins.core
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 local opt = vim.opt
 
 opt.autoindent = true
 opt.autowrite = true -- Enable auto write
+opt.backup = false -- creates a backup file
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 3 -- Hide * markup for bold and italic
@@ -51,5 +48,3 @@ opt.wrap = true -- Enable line wrap
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
-
-
