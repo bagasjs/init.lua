@@ -11,7 +11,7 @@ map({'i', 'v'}, '<C-c>', '<ESC><ESC>', { silent = true })
 map({'n', 'i', 'v'}, '<C-s>', '<CMD>w<CR><ESC>', { silent = true, desc = "Save file" })
 
 -- Enter file explorer in normal mode
-map('n', '<leader>fe', ':Lex 30<CR>', { silent = true })
+map('n', '<leader>fe', ':Ex <CR>', { silent = true })
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -34,14 +34,14 @@ map("n", "<leader>wd", "<C-W>c", { desc = "Destoy window", remap = true })
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
 map("n", "<leader>wh", "<C-W>s", { desc = "Split window horizontally", remap = true })
 map("n", "<leader>wv", "<C-W>v", { desc = "Split window vertically", remap = true })
-map({"n", "i"}, "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-map({"n", "i"}, "<C-j>", "<C-w>j", { desc = "Go to bottom window", remap = true })
-map({"n", "i"}, "<C-k>", "<C-w>k", { desc = "Go to above window", remap = true })
-map({"n", "i"}, "<C-l>", "<C-w>h", { desc = "Go to right window", remap = true })
-map({"n", "i"}, "<C-Up>", "<CMD>resize +2<CR>", { desc = "Resize window + horizontally", remap = true })
-map({"n", "i"}, "<C-Down>", "<CMD>resize -2<CR>", { desc = "Resize window - horizontally", remap = true })
-map({"n", "i"}, "<C-Left>", "<CMD>vertical resize -2<CR>", { desc = "Resize window - vertically", remap = true })
-map({"n", "i"}, "<C-Right>", "<CMD>vertical resize +2<CR>", { desc = "Resize window + vertically", remap = true })
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to bottom window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to above window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+map("n", "<C-Up>", "<CMD>resize +2<CR>", { desc = "Resize window + horizontally", remap = true })
+map("n", "<C-Down>", "<CMD>resize -2<CR>", { desc = "Resize window - horizontally", remap = true })
+map("n", "<C-Left>", "<CMD>vertical resize -2<CR>", { desc = "Resize window - vertically", remap = true })
+map("n", "<C-Right>", "<CMD>vertical resize +2<CR>", { desc = "Resize window + vertically", remap = true })
 
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
