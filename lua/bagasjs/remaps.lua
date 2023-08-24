@@ -6,7 +6,7 @@ local map = function (modes, key, command, config)
     vim.keymap.set(modes, key, command, config)
 end
 
-map({'i', 'v'}, '<C-c>', '<ESC><ESC>', { silent = true })
+map({'n', 'i', 'v'}, '<C-c>', '<ESC><ESC>', { silent = true })
 
 map({'n', 'i', 'v'}, '<C-s>', '<CMD>w<CR><ESC>', { silent = true, desc = "Save file" })
 
