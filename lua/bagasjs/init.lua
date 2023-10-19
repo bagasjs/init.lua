@@ -11,11 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("bagasjs.settings")
-require("bagasjs.remaps")
-
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
+require("bagasjs.settings")
+require("bagasjs.remaps")
 require("lazy").setup("bagasjs.plugins")
