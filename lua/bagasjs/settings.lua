@@ -22,6 +22,5 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 opt.backup = false -- creates a backup file
-opt.termguicolors = true -- True color support
+opt.termguicolors = false -- True color support
 opt.undofile = true
-

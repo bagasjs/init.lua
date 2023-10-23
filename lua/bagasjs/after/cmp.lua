@@ -1,7 +1,30 @@
 local cmp = require("cmp")
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local function border(hl_name)
+    return {
+        { "╭", hl_name },
+        { "─", hl_name },
+        { "╮", hl_name },
+        { "│", hl_name },
+        { "╯", hl_name },
+        { "─", hl_name },
+        { "╰", hl_name },
+        { "│", hl_name },
+    }
+end
+
 cmp.setup({
+    window = {
+        documentation = {
+            border = border "CmpDocBorder",
+            winhighlight = "Normal:CmpDoc",
+        },
+    },
+    completion = {
+        completeopt = "menu,menuone",
+        border = border "CmpBorder"
+    },
     snippet = {
         expand = (function(args)
             require("luasnip").lsp_expand(args.body)
