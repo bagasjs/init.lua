@@ -16,7 +16,7 @@ vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 
 -- others
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = false
