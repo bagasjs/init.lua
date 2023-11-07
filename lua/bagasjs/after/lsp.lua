@@ -8,6 +8,8 @@ require("mason-lspconfig").setup {
         "tsserver",
         "intelephense",
         "pyright",
+
+        "cmake",
     },
     automatic_installation = false,
 }
@@ -20,3 +22,5 @@ lspconfig.gopls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.intelephense.setup {}
 lspconfig.pyright.setup {}
+
+lspconfig.cmake.setup {}

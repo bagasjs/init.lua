@@ -4,7 +4,24 @@ return {
         lazy = false,
         priority = 1000,
         opts = {},
+        config = (function()
+            vim.cmd [[colorscheme tokyonight]]
+        end)
     },
+
+    {
+        {
+            'stevearc/oil.nvim',
+            opts = {},
+            -- Optional dependencies
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+            config = (function()
+                require("bagasjs.after.oil")
+            end)
+        }
+    },
+
+
     -- Fuzzy finder
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.3',
