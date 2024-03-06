@@ -8,6 +8,8 @@ require("mason-lspconfig").setup {
         "tsserver",
         "intelephense",
         "pyright",
+        "ruby_ls",
+        "ocamllsp",
 
         "cmake",
     },
@@ -16,11 +18,14 @@ require("mason-lspconfig").setup {
 
 local lspconfig = require("lspconfig")
 lspconfig.lua_ls.setup {}
+lspconfig.ruby_ls.setup {}
 lspconfig.rust_analyzer.setup {}
 lspconfig.clangd.setup {}
 lspconfig.gopls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.intelephense.setup {}
 lspconfig.pyright.setup {}
-
 lspconfig.cmake.setup {}
+
+vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
