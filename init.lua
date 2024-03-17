@@ -1,2 +1,1 @@
-require("bagasjs")
-
+require("bagasjs.init")

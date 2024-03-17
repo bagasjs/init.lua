@@ -1,5 +1,3 @@
-local opt = vim.opt
-
 -- line number
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -21,6 +19,11 @@ vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-opt.backup = false -- creates a backup file
-opt.termguicolors = false -- True color support
-opt.undofile = true
+vim.opt.backup = false -- creates a backup file
+vim.opt.termguicolors = false -- True color support
+vim.opt.undofile = true
+
+-- Netrw
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25

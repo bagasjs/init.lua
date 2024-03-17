@@ -8,6 +8,7 @@ end
 map("n", "<leader>fe", "<cmd>Explore<cr>", { silent = true })
 map({ "n", "i", "v", "x", "t" }, "<C-c>", "<esc><esc><esc>", { silent = true })
 map('n', '-', '$')
+map("n", "J", "mzJ`z")
 
 -- move Lines
 map("n", "<M-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -20,16 +21,6 @@ map("v", "<M-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- better indenting
 map({"v", "x"}, "<", "<gv")
 map({"v", "x"}, ">", ">gv")
-
--- windowing
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to bottom window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to above window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
-map("n", "<C-Up>", "<CMD>resize +2<CR>", { desc = "Resize window + horizontally", remap = true })
-map("n", "<C-Down>", "<CMD>resize -2<CR>", { desc = "Resize window - horizontally", remap = true })
-map("n", "<C-Left>", "<CMD>vertical resize -2<CR>", { desc = "Resize window - vertically", remap = true })
-map("n", "<C-Right>", "<CMD>vertical resize +2<CR>", { desc = "Resize window + vertically", remap = true })
 
 -- tabs
 map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
