@@ -9,6 +9,7 @@ return {
             delete_to_trash = true,
             columns = {
                 "icon",
+                "size",
                 "permissions",
             },
             view_options = {

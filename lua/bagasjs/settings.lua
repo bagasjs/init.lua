@@ -20,7 +20,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.backup = false -- creates a backup file
-vim.opt.termguicolors = false -- True color support
+vim.opt.termguicolors = true -- True color support
 vim.opt.undofile = true
 
 -- Netrw
