@@ -5,6 +5,8 @@ local map = function(modes, key, command, config)
     vim.keymap.set(modes, key, command, config)
 end
 
+map("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Move to previous buffer" })
+
 map("n", "<leader>fe", "<cmd>Explore<cr>", { silent = true })
 map({ "n", "i", "v", "x", "t" }, "<C-c>", "<esc><esc><esc>", { silent = true })
 map('n', '-', '$')
@@ -29,3 +31,6 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 map("n", "<leader><tab>t", "<CMD>tabnew<CR><CMD>terminal<CR>", { desc = "Open Terminal in new Tab" })
 map("t", "<ESC>", "<C-\\><C-n>")
+
+-- utilities
+map("n", "<leader>rm", "<cmd>!make<cr>")

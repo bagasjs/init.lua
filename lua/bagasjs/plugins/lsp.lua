@@ -18,6 +18,7 @@ return {
                 "intelephense",
                 "pyright",
                 "cmake",
+                "emmet_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -35,6 +36,14 @@ return {
                         }
                     }
                 end),
+                ["emmet_ls"] = (function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.emmet_ls.setup {
+                        filetypes = { "astro", "css", "eruby", "html", "htmldjango",
+                            "javascriptreact", "less", "pug", "sass", "scss", "svelte",
+                            "typescriptreact", "vue" },
+                    }
+                end)
             },
             automatic_installation = false,
         }
