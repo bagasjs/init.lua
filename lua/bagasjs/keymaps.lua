@@ -29,21 +29,32 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-map("n", "<leader><tab>t", "<CMD>tabnew<CR><CMD>terminal<CR>", { desc = "Open Terminal in new Tab" })
+map("n", "<leader><tab>t", "<CMD>tabnew<CR><CMD>terminal bash<CR>", { desc = "Open Terminal in new Tab" })
 map({ "n", "t" }, "<leader><tab>k", "<CMD>bd!<CR>", { desc = "Forcefully kill a buffer useful for terminal buffer" })
 map("n", "<leader>pk", '<CMD>call chansend(b:terminal_job_id, "\\x03")<CR>', { desc = "Kill a process in a terminal mode" })
 map("t", "<ESC>", "<C-\\><C-n>")
 
 -- utilities
+map("n", "<leader>rc", "<cmd>edit $MYVIMRC<cr>")
 map(
     "n", "<leader><tab>r",
     (function()
-        vim.cmd("tabnew")
-        vim.cmd("terminal")
         local command = vim.fn.input("Command > ")
-        vim.fn.chansend(vim.b.terminal_job_id, command .. "\r\n")
+        if #command > 0 then
+            vim.cmd("tabnew")
+            vim.cmd("terminal " .. command)
+        end
     end),
     { desc = "Open terminal in new tab and run the command" }
 )
-map("n", "<leader>rm", "<cmd>!make<cr>")
-map("n", "<leader>rc", "<cmd>edit $MYVIMRC<cr>")
+map("n", "<leader>pm", function()
+    if not vim.g.project_build_cmd then
+        vim.g.project_build_cmd = vim.fn.input("Enter build command > ")
+    end
+    if vim.g.project_build_cmd ~= "" then
+        vim.cmd("!" .. vim.g.project_build_cmd)
+    else
+        print("Build command not set!")
+    end
+end, { noremap = true, silent = false, desc = "Execute a command to make (build) the project"})
+
