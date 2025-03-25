@@ -1,4 +1,4 @@
-return {
+local config = {
     "nvim-treesitter/nvim-treesitter",
     config = function ()
         require("nvim-treesitter.configs").setup({
@@ -12,3 +12,10 @@ return {
         })
     end
 }
+
+local enabled = true
+if enabled then
+    return config
+else
+    return {}
+end

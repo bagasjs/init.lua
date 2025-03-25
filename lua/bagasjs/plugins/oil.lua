@@ -1,4 +1,4 @@
-return {
+local config = {
     'stevearc/oil.nvim',
     opts = {},
     -- Optional dependencies
@@ -26,3 +26,10 @@ return {
         vim.keymap.set("n", "<leader>fe", "<cmd>Oil<cr>", {})
     end)
 }
+
+local enabled = true
+if enabled then
+    return config
+else
+    return {}
+end

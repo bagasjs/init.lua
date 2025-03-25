@@ -1,4 +1,4 @@
-return {
+local config = {
     "folke/tokyonight.nvim",
     {
         "rose-pine/neovim",
@@ -10,3 +10,10 @@ return {
         end)
     }
 }
+
+local enabled = false
+if enabled then
+    return config
+else
+    return {}
+end

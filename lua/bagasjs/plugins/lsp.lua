@@ -15,10 +15,11 @@ return {
                 "clangd",
                 "gopls",
                 "tsserver",
-                "intelephense",
+                -- "intelephense",
                 "pyright",
-                "cmake",
+                -- "cmake",
                 "emmet_ls",
+                "ols",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

@@ -2,3 +2,4 @@
 require "bagasjs.keymaps"
 require "bagasjs.settings"
 require "bagasjs.lazy_init"
+require "bagasjs.others"
