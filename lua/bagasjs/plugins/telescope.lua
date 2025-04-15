@@ -1,4 +1,4 @@
-return {
+local config = {
     "nvim-telescope/telescope.nvim", tag = "0.1.3",
     config = function ()
         local builtin = require("telescope.builtin")
@@ -10,3 +10,10 @@ return {
         vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
     end
 }
+
+local enabled = true
+if enabled then
+    return config
+else
+    return {}
+end
